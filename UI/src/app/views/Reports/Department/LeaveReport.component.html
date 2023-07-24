@@ -1,0 +1,101 @@
+<div class="main">
+  <div>
+    <div class="tittle">
+      <mat-label>Departments-Total-Report</mat-label>
+    </div>
+    <table class="content" mat-table [dataSource]="Leave">
+      <ng-container matColumnDef="Department">
+        <th class="cell" mat-header-cell *matHeaderCellDef>Department</th>
+        <td class="cell" mat-cell *matCellDef="let element">{{ element.departmentName }}</td>
+      </ng-container>
+      <ng-container matColumnDef="TotalLeave">
+        <th class="cell" mat-header-cell *matHeaderCellDef>TotalLeave</th>
+        <th></th>
+        <td class="cell" style="margin-left: 100px" mat-cell *matCellDef="let element">{{ element.leaveCount }}</td>
+      </ng-container>
+      <ng-container matColumnDef="TotalEmploys">
+        <th class="cell" mat-header-cell *matHeaderCellDef>TotalEmploys</th>
+        <td class="cell" style="margin-left: 100px" mat-cell *matCellDef="let element">{{ element.employCount }}</td>
+      </ng-container>
+      <ng-container matColumnDef="TotalTax">
+        <th class="cell" mat-header-cell *matHeaderCellDef>TotalTax</th>
+        <td class="cell" style="margin-left: 100px" mat-cell *matCellDef="let element">{{ element.totalTax }}</td>
+      </ng-container>
+      <ng-container matColumnDef="TotalSalary">
+        <th class="cell" mat-header-cell *matHeaderCellDef>TotalSalary</th>
+        <td class="cell" style="margin-left: 100px" mat-cell *matCellDef="let element">{{ element.netamount }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+</div>
+<div class="search">
+  <div class="head">
+   
+    <div class="selectdep1">
+      <mat-form-field class="form1-select" appearance="standard">
+        <mat-label>Select department</mat-label>
+        <mat-select  (ngModelChange)="SearchDepartmentLeave($event)" [(ngModel)]="this.DepartmentLeaveSearch.id" name="emp">
+          <mat-option [value]="dep.id" *ngFor="let dep of DropDepartments" value="one">{{ dep.name }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="tittle4">
+    <mat-label>Department-leave-report</mat-label>
+  </div>
+  <table class="content4" mat-table [dataSource]="DepartmentLeaveSearchList">
+    <ng-container matColumnDef="EmployeeName">
+      <th class="cell" mat-header-cell *matHeaderCellDef>EmployName</th>
+      <td class="cell" mat-cell *matCellDef="let element">{{ element.employName }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Designation">
+      <th class="cell" mat-header-cell *matHeaderCellDef>Designation</th>
+      <th></th>
+      <td class="cell" style="margin-left: 100px" mat-cell *matCellDef="let element">{{ element.designation }}</td>
+    </ng-container>
+    <ng-container matColumnDef="EmployLeave">
+      <th class="cell" mat-header-cell *matHeaderCellDef>EmployLeave</th>
+      <td
+        class="cell"
+        style="margin-left: 100px; font-size: 22px"
+        mat-cell
+        *matCellDef="let element"
+        [ngClass]="{
+          'is-green': element.leave < 5,
+          'is-red': element.leave > 10,
+          'is-yellow': element.leave >= 5 && element.leave < 10
+        }"
+      >
+        {{ element.leave }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="statusbars">
+      <th class="cell" mat-header-cell *matHeaderCellDef>
+        <div class="status1">
+          <h5>Max :</h5>
+          <div class="sta"></div>
+        </div>
+        <div class="status1">
+          <h5>Mid :</h5>
+          <div class="sta1"></div>
+        </div>
+        <div class="status1">
+          <h5>Low :</h5>
+          <div class="sta2"></div>
+        </div>
+      </th>
+      <td class="cell" style="margin-left: 100px" mat-cell *matCellDef="let element"></td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="ITdisplayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: ITdisplayedColumns"></tr>
+  </table>
+</div>
+
+ 
+</div>
+
+
+
+

@@ -1,0 +1,33 @@
+.main{
+    display: flex;
+    width: 1000px;
+    height: 400px;
+    background-color:white;
+    margin-top:30px ;
+    margin-left: 100px;
+    padding: 30px;
+  }
+
+  
+  .form1{
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    margin-left: 210px;
+  }
+
+  .form1 .form1-input{
+    width: 500px;
+  }
+  .form1-select{
+    width: 500px;
+  }
+
+  .tittle{
+    
+    margin-left: 200px;
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+    color: rgb(146, 142, 142);
+  }

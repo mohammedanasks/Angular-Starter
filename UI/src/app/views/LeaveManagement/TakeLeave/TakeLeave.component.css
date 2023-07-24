@@ -1,0 +1,49 @@
+.main{
+    display: flex;
+    width: 1000px;
+    height: 400px;
+    background-color:white;
+    margin-top:70px ;
+    margin-left: 100px;
+    padding: 30px;
+  }
+
+  
+  .form1{
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    margin-left: 210px;
+  }
+
+  .form1 .form1-input{
+    width: 500px;
+  }
+  .form1-select{
+    width: 500px;
+  }
+
+  .tittle{
+    
+    margin-left: 200px;
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+    color: rgb(146, 142, 142);
+  }
+
+  @keyframes shake {
+    0%, 100%{
+      margin-left: 0;
+    }
+    20%,80%{
+      margin-left: -12px;
+    }
+    40%,60%{
+      margin-left: 12PX;
+    }
+  }
+
+  .errormsg.shake{
+    animation: shake 0.3s ease-in-out infinite;
+  }

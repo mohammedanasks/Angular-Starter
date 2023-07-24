@@ -1,0 +1,20 @@
+.outofstockmsg h2{
+    margin-top: 70px;
+}
+
+.container{
+ 
+    width: 350px;
+    height: 430px;
+}
+
+.main{
+
+}
+.main img{
+    border-radius: 70px;
+    margin-left: 65px;
+    width: 200px;
+    height: 200px;
+  
+}

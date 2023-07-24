@@ -1,0 +1,74 @@
+.main{
+  display: flex;
+  width: 1100px;
+  height: 600px;
+  background-color:rgb(255, 255, 255);
+  margin-top:10px ;
+  margin-left: 100px;
+  padding: 30px;
+
+}
+
+
+.form1{
+  width: 200px;
+  height: 550px;
+  background-color:rgb(255, 255, 255);
+  margin-left: 210px;
+
+
+}
+
+.form1 .form1-input{
+  width: 500px;
+}
+.form1-select{
+  width: 500px;
+}
+
+.tittle{
+  
+  margin-top: 0px;
+  margin-left: 200px;
+  font-family: sans-serif;
+  font-weight: bolder;
+  font-size: 20px;
+  color: rgb(146, 142, 142);
+}
+
+mat-form-field {
+  margin-right: 12px;
+  width: 500px;
+  
+}
+.net{
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.fade{
+
+ animation: fadOut 7s;
+ width: 400px;
+ height: 80px;
+ background-color: rgb(135, 231, 199);
+ color: rgb(43, 41, 41);
+ margin-top:  5px;
+ margin-left: 130px;
+ border-radius: 2px;
+}
+.fade p{
+  margin-left: 110px;
+  padding: 30px;
+  font-size: large;
+
+}
+
+@keyframes fadOut{
+  from{
+    opacity: 129;
+  }
+  to{
+    opacity: 0;
+  }
+}

@@ -1,0 +1,59 @@
+
+
+.content{
+   
+    width: 900px;
+    margin-left: 140px;
+    margin-top: 30px;
+    position: fixed;
+    margin-top: 8px;
+
+}
+.cell{
+    padding: 30px;
+}
+
+.mat-header-cell{
+    background-color:#bebebe;
+    color: white;
+    font-size: 17px;
+    font-family: sans-serif;
+    border-radius: 2px;
+}
+
+.btn{
+    margin-left: 900px;
+    margin-top: 10px; 
+    margin-bottom: 0px;
+}
+
+a:hover{
+    color: blue;
+}
+
+.fade{
+
+    animation: fadOut 7s;
+    width: 400px;
+    height: 80px;
+    background-color: rgb(135, 231, 199);
+    color: rgb(43, 41, 41);
+    margin-top:  160px;
+    margin-left: 1500px;
+    border-radius: 2px;
+   }
+   .fade p{
+     margin-left: 110px;
+     padding: 30px;
+     font-size: large;
+   
+   }
+   
+   @keyframes fadOut{
+     from{
+       opacity: 129;
+     }
+     to{
+       opacity: 0;
+     }
+   }

@@ -1,0 +1,40 @@
+
+
+
+<div class="main">
+  <form class="form1" >
+    <label class="tittle">PaySalary</label>
+    <mat-form-field class="form1-input" appearance="standard">
+      <mat-label>EmployName</mat-label>
+      <input [(ngModel)]="this.Employ.employeeName" name="fname" type="text" matInput />
+    </mat-form-field>
+    <mat-form-field  class="form1-input"  appearance="standard">
+      <mat-label>Tax</mat-label>
+      <input [(ngModel)]="this.Employ.tax" name="lname"  matInput />
+    </mat-form-field>
+    <mat-form-field  class="form1-input"  appearance="standard">
+      <mat-label>Leave</mat-label>
+      <input [(ngModel)]="this.Employ.leaveCount" name="con" matInput />
+    </mat-form-field>
+    <mat-form-field class="form1-input"  appearance="standard">
+        <mat-label>Deduction</mat-label>
+        <input [(ngModel)]="this.Employ.deduction" name="deduct"  matInput />
+      </mat-form-field>
+      <mat-form-field class="form1-input"  appearance="standard">
+        <mat-label>Date</mat-label>
+        <input [(ngModel)]="this.Employ.date" name="dat"  matInput />
+      </mat-form-field>
+      <mat-form-field class="form1-input"  appearance="standard">
+        <mat-label>NetAmount</mat-label>
+        <input [(ngModel)]="this.Employ.netAmount" name="sal"  matInput />
+      </mat-form-field>
+        <button  (click)="PaySalary()" 
+        style="margin-left:400px;width: 100px;"  mat-raised-button color="primary">Pay</button>
+  </form>     
+</div>
+<div class="fade" *ngIf="this.PayStatus">
+  <p>successfully payed</p>
+</div> 
+
+
+

@@ -1,0 +1,28 @@
+ngb-carousel .wrapper {
+    position: relative;
+    height: 0;
+    padding-top: 55%; /* Keep ratio for 900x500 images */
+  }
+  ngb-carousel .wrapper>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  img{
+    width: 700px;
+    height: 700px;
+    margin: 100px;
+    margin-left: 500px;
+    
+  }
+
+ .test{
+  width: 2000px;
+  height: 100vh;
+
+  top: 0;
+  left: 0;
+ }

@@ -1,0 +1,32 @@
+<dx-data-grid
+  [dataSource]="dataSource"
+  [remoteOperations]="true"
+  [height]="600"
+  [showBorders]="true"
+> <dxo-paging 
+        [pageSize]="15"
+        [pageIndex]="1"> <!-- Shows the second page -->
+    </dxo-paging>
+  <dxo-filter-row [visible]="true"></dxo-filter-row>
+  <dxo-header-filter [visible]="true"></dxo-header-filter>
+  <dxo-group-panel [visible]="true"></dxo-group-panel>
+  <dxo-scrolling mode="virtual"></dxo-scrolling>
+  <dxo-editing
+    mode="row"
+    [allowAdding]="true"
+    [allowUpdating]="true"
+    [allowDeleting]="true"
+  >
+  </dxo-editing>
+  <dxo-grouping [autoExpandAll]="false"></dxo-grouping>
+  <dxo-master-detail [enabled]="true" template="detail"></dxo-master-detail>
+  <dxi-column dataField="id" caption="Id">
+  </dxi-column>
+  <dxi-column dataField="lastName">
+  </dxi-column>
+  <dxi-column dataField="departmentName" caption="Department">
+  </dxi-column>
+  <dxi-column dataField="designationName" caption="Designation">
+  </dxi-column>
+ 
+</dx-data-grid>

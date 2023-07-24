@@ -1,0 +1,20 @@
+
+
+<div class="main">
+
+  <form class="form1" >
+      <label class="tittle" >AddLeaveTypes</label>
+        <mat-form-field class="form1-input" appearance="standard">
+          <mat-label>LeaveType</mat-label>
+          <input [(ngModel)]="leaveType.leaveTypeName"   name="fname" type="text" matInput />
+        </mat-form-field>
+        <section class="example-section">
+          <mat-checkbox class="example-margin" name="inputPaid" [(ngModel)]="leaveType.isPaid">IsPaid</mat-checkbox>
+        </section>
+        <button (click)="AddLeaveType()"  style="margin-left:400px;width: 100px;"  mat-raised-button color="primary">Add</button>
+  </form>      
+
+</div>
+
+{{leaveType|json}}
+

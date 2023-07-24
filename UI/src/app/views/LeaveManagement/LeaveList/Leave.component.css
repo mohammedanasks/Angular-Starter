@@ -1,0 +1,46 @@
+
+
+.content{
+   
+    width: 900px;
+    margin-left: 100px;
+    margin-top: 10px;
+
+    overflow-x: auto;
+    overflow-y: auto;
+
+
+}
+
+.mat-header-cell{
+    background-color:#bebebe;
+    color: white;
+    font-size: 17px;
+    font-family: sans-serif;
+    border-radius: 2px;
+}
+.cell{
+    padding: 30px;
+}
+
+.btn{
+    margin-left: 900px;
+    margin-top: 60px; 
+    margin-bottom: 0px;
+}
+
+a:hover{
+    color: blue;
+}
+
+.paginatore{
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-bottom: 0px;
+    width: 1200px;
+}
+
+.paginatore mat-paginator {
+    margin-right: 400px;
+    background-color: rgba(255, 255, 255, 0.100);
+}

@@ -1,0 +1,70 @@
+
+
+.content{
+   
+    width: 900px;
+    margin-left: 20px;
+    margin-top: 10px;
+    overflow-x: auto;
+    overflow-y: auto;
+
+
+
+ 
+}
+
+
+.mat-header-cell{
+    background-color:#bebebe;
+    color: white;
+    font-size: 17px;
+    font-family: sans-serif;
+    border-radius: 2px;
+}
+
+.date{
+    margin-left: 140px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    height: 90px;
+}
+
+
+a:hover{
+    color: blue;
+}
+
+.cell{
+    padding: 30px;
+}
+
+.is-red{
+    background-color: rgb(180, 47, 47);
+    width: 95px;
+}
+
+.is-green{
+   background-color: rgb(65, 113, 65);
+
+}
+
+.paginatore{
+    margin-top: 10px;
+    margin-left: 80px;
+    margin-bottom: 0px;
+    width: 1200px;
+}
+
+.paginatore mat-paginator {
+    margin-right: 400px;
+    background-color: rgba(255, 255, 255, 0.100);
+}
+.checkbox1{
+    margin-top: 80px;
+    margin-left: 100px;
+    font-size: large;
+    
+}
+.example-margin{
+    font-size: large;
+}

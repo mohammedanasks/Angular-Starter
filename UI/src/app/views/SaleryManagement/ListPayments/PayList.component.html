@@ -1,0 +1,110 @@
+<!-- < cols="2" rowHeight="2:1"> -->
+
+
+
+<div class="container">
+  <div class="checkbox1">
+
+
+    <input type="radio" name="all" value="All" [(ngModel)]="SearchCheckboxValue"
+    (change)="Radiochange()">
+    <span>{{' All ['+All+']'}}</span>
+    <input type="radio" style="margin-left:50px;"  name="paid" value="Paid" [(ngModel)]="SearchCheckboxValue"
+    (change)="Radiochange()">
+    <span>{{' Paid ['+Paid+']'}}</span>
+    <input type="radio" style="margin-left:50px;"  name="NotPay" value="NotPaid" [(ngModel)]="SearchCheckboxValue"
+    (change)="Radiochange()">
+    <span>{{' NotPaid ['+NotPaid+']'}}</span>
+  </div>
+
+
+  <table class="content" mat-table [dataSource]="GivenData">
+    <ng-container  matColumnDef="Id">
+      <th class="cell" mat-header-cell *matHeaderCellDef>Id</th>
+      <td class="cell" mat-cell *matCellDef="let element">{{ element.employeeId }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Name">
+      <th class="cell" mat-header-cell *matHeaderCellDef>Name</th>
+      <td class="cell" mat-cell *matCellDef="let element">{{ element.employeeName }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Department">
+      <th class="cell" mat-header-cell *matHeaderCellDef>Department</th>
+      <td class="cell" mat-cell *matCellDef="let element">{{ element.departmentName }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Amount">
+      <th class="cell" mat-header-cell *matHeaderCellDef>BasicSalary</th>
+      <td class="cell" mat-cell *matCellDef="let element">{{ element.basicSalary }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Tax">
+      <th class="cell" mat-header-cell *matHeaderCellDef>Tax</th>
+      <td class="cell" mat-cell *matCellDef="let element">{{ element.tax }}</td>
+    </ng-container>
+    <ng-container matColumnDef="LeaveCount">
+      <th class="cell" mat-header-cell *matHeaderCellDef>Leave</th>
+      <td class="cell" mat-cell *matCellDef="let element">{{ element.leaveCount }}</td>
+    </ng-container>
+    <ng-container matColumnDef="paidLeaveCount">
+      <th class="cell" mat-header-cell *matHeaderCellDef>paid Leave Count</th>
+      <td class="cell" mat-cell *matCellDef="let element">{{ element.paidLeaveCount }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Reduction">
+      <th class="cell" mat-header-cell *matHeaderCellDef>Deduction</th>
+      <td class="cell" mat-cell *matCellDef="let element">{{ element.deduction }}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="NetSalary">
+      <th class="cell" mat-header-cell *matHeaderCellDef>NetSalary</th>
+      <td class="cell" mat-cell *matCellDef="let element">{{ element.netAmount }}</td>
+    </ng-container>
+  
+    <ng-container class="content" matColumnDef="Actions">
+      <th class="cell" mat-header-cell *matHeaderCellDef>Actions</th>
+      <td  mat-cell *matCellDef="let element">
+        <button *ngIf="element.isPaid==false"
+        [ngClass]="{
+          'is-green': element.isPaid == false
+        }"
+          mat-raised-button
+   
+          routerLink="/SalaryManagement/PaySalary/{{ element.employeeId }}"
+          routerLinkActive="router-link-active"
+        >
+          PaySalary
+        </button>
+        <button
+        *ngIf="element.isPaid==true"
+        mat-raised-button
+  
+        [ngClass]="{
+          'is-red': element.isPaid ==true
+        }"
+          mat-raised-button
+        >
+          Closed
+        </button>
+       
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <div class="paginatore">
+    <mat-paginator [length]="Employs.length"
+    [pageSize]="5"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    (page)="OnpageChange($event)">
+  </mat-paginator>
+  
+  </div>
+
+
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+<div class="main">
+
+    <form class="form1" >
+      <label class="tittle" *ngIf="this.tittle" >AddEmploy</label>
+      <label class="tittle" *ngIf="this.tittle==false" >UpdateEmploy</label>
+        <mat-form-field class="form1-input" appearance="standard">
+          <mat-label [hidden]="first" >FirstName</mat-label>
+          <input [(ngModel)]="this.employ.firstName" name="fname" type="text" matInput />
+          <span style="color: red;" *ngIf="first">{{FirstNameRequired}}</span>
+        </mat-form-field>
+       
+        <mat-form-field  class="form1-input"  appearance="standard">
+          <mat-label [hidden]="last">LastName</mat-label>
+          <input [(ngModel)]="this.employ.lastName" name="lname" type="text" matInput />
+          <span style="color: red;" *ngIf="last">{{LastNameRequired}}</span>
+        </mat-form-field>
+        <mat-form-field  class="form1-input"  appearance="standard">
+          <mat-label [hidden]="con">contact</mat-label>
+          <input [(ngModel)]="this.employ.contact" name="con" type="number" matInput />
+          <span style="color: red;" *ngIf="con">{{ContactRequired}}</span>
+        </mat-form-field>
+        <mat-form-field class="form1-input"  appearance="standard">
+            <mat-label [hidden]="sal">BasicSalary</mat-label>
+            <input [(ngModel)]="this.employ.basicSalary" name="sal" type="number" matInput />
+            <span style="color: red;" *ngIf="first">{{SalaryRequired}}</span>
+          </mat-form-field>
+      </form>
+      
+     <div class="form2">
+        <mat-form-field class="form2-select" appearance="standard">
+            <mat-label [hidden]="dep" >Department</mat-label>
+            <span style="color: red;" *ngIf="dep">{{DepartmentRequired}}</span>
+            <mat-select [(ngModel)]="this.employ.departmentId" >
+              <mat-option [value]="dep.id" *ngFor="let dep of departments" value="one">{{dep.name}}</mat-option>
+         
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="form2-select" appearance="standard">
+            <mat-label [hidden]="desig" >Designation</mat-label>
+            <span style="color: red;" *ngIf="desig">{{DesignationRequired}}</span>
+            <mat-select [(ngModel)]="this.employ.designationId">
+              <mat-option [value]="des.id" *ngFor="let des of designations" value="one">{{des.name}}</mat-option>
+         
+            </mat-select>
+          </mat-form-field>
+    <div class="date">
+      <div>
+        <mat-label style="margin-top: 15px" for="exampleFormControlInput1">Date</mat-label>
+        <mat-form-field>
+          <input [(ngModel)]="this.employ.createDate"  matInput type="datetime-local" placeholder="start date" />
+        </mat-form-field>
+      </div>
+      <div style="margin-left:100px;padding: 10px; width:200px;height:90px;color:#9f9898">
+         <label>AddPhoto</label>
+        <input [(ngModel)]="this.employ.fileName" (change)="onfileselect($event)" style="width: 200px;height:200px" type="file"/>
+      </div>
+    </div>  
+    <button *ngIf="this.tittle" style="margin-left:400px;width: 100px;" (click)="AddEmploy()" mat-raised-button color="primary">Add</button>
+    <button *ngIf="this.tittle==false" style="margin-left:400px;width: 100px;" (click)="UpdateEmploy()" mat-raised-button color="primary">Update</button>
+  </div>     
+</div>
+
+

@@ -1,0 +1,99 @@
+
+<mat-form-field class="form1-select" appearance="standard">
+  <mat-label>ChooseMonth</mat-label>
+  <mat-select  [(ngModel)]="this.monthcount"  name="sal" >
+    <mat-option [value]="mth.id" *ngFor="let mth of this.Months" value="one">{{mth.name}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<button (click)="searchByMonth()" style="margin-left:400px;width: 100px;"  mat-raised-button color="primary">Search</button>
+    <div class="tittle">
+      <mat-label>Paid-Salary</mat-label>
+    </div>
+    <table  class="content" mat-table [dataSource]="salary" >  
+        <ng-container  matColumnDef="Id">
+          <th class="cell" mat-header-cell *matHeaderCellDef>Id</th>
+          <td class="cell"  mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Name">
+          <th class="cell" mat-header-cell *matHeaderCellDef> Name </th>
+       <td class="cell" mat-cell *matCellDef="let element">{{element.employeeName}}</td>
+        </ng-container>
+        <ng-container  matColumnDef="Tax">
+          <th class="cell" mat-header-cell *matHeaderCellDef>Tax </th>
+          <td class="cell" style="margin-left: 100px;" mat-cell *matCellDef="let element"> {{element.tax}}</td>
+        </ng-container>
+        <ng-container  matColumnDef="Salary">
+          <th class="cell" mat-header-cell *matHeaderCellDef> Salary</th>
+          <td class="cell" style="margin-left: 100px;" mat-cell *matCellDef="let element">{{element.netAmount}} </td>
+        </ng-container>
+       
+        <ng-container  matColumnDef="Date">
+          <th class="cell" mat-header-cell *matHeaderCellDef>Date</th>
+          <td class="cell" style="margin-left: 100px;" mat-cell *matCellDef="let element"> {{element.date}}</td>
+        </ng-container>
+        <ng-container  matColumnDef="TotalSalary">
+          <th class="cell" mat-header-cell *matHeaderCellDef style="color: green;">TotalSalary: {{this.total}}</th>
+          <td class="cell" style="margin-left: 100px;" mat-cell *matCellDef="let element"> </td>
+        </ng-container>
+        <tr  mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr  mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table> 
+
+      <div class="tittle1">
+        <mat-label >Monthly-Report</mat-label>
+      </div>
+      <table  class="content1" mat-table [dataSource]="MonthlyRepo" >  
+        <ng-container  matColumnDef="Months">
+          <th class="cell" mat-header-cell *matHeaderCellDef>Month</th>
+          <td class="cell"  mat-cell *matCellDef="let element"> {{element.month}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Tax">
+          <th class="cell" mat-header-cell *matHeaderCellDef>Tax</th>
+       <td class="cell" mat-cell *matCellDef="let element">{{element.tax}}</td>
+        </ng-container>
+        <ng-container  matColumnDef="Salary">
+          <th class="cell" mat-header-cell *matHeaderCellDef>TotalSalary</th>
+          <td class="cell" style="margin-left: 100px;" mat-cell *matCellDef="let element"> {{element.totalSalary}}</td>
+        </ng-container>
+        <ng-container  matColumnDef="Deduction">
+          <th class="cell" mat-header-cell *matHeaderCellDef>Deduction</th>
+          <td class="cell" style="margin-left: 100px;" mat-cell *matCellDef="let element">{{element.deduction}} </td>
+        </ng-container>
+        <ng-container  matColumnDef="leave">
+          <th class="cell" mat-header-cell *matHeaderCellDef>Leave</th>
+          <td class="cell" style="margin-left: 100px;" mat-cell *matCellDef="let element"> {{element.leave}}</td>
+        </ng-container>
+        <tr  mat-header-row *matHeaderRowDef="displayedCol"></tr>
+        <tr  mat-row *matRowDef="let row; columns: displayedCol;"></tr>
+      </table> 
+
+      <div class="tittle2">
+        <mat-label >Yearly-Report</mat-label>
+      </div>
+      <table  class="content2" mat-table [dataSource]="YearlyRepo" >  
+        <ng-container  matColumnDef="Year">
+          <th class="cell" mat-header-cell *matHeaderCellDef>Year</th>
+          <td class="cell"  mat-cell *matCellDef="let element"> {{element. year}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Tax">
+          <th class="cell" mat-header-cell *matHeaderCellDef>Tax</th>
+       <td class="cell" mat-cell *matCellDef="let element">{{element.tax}}</td>
+        </ng-container>
+        <ng-container  matColumnDef="Salary">
+          <th class="cell" mat-header-cell *matHeaderCellDef>TotalSalary</th>
+          <td class="cell" style="margin-left: 100px;" mat-cell *matCellDef="let element"> {{element.totalSalary}}</td>
+        </ng-container>
+        <ng-container  matColumnDef="Deduction">
+          <th class="cell" mat-header-cell *matHeaderCellDef>Deduction</th>
+          <td class="cell" style="margin-left: 100px;" mat-cell *matCellDef="let element">{{element.deduction}} </td>
+        </ng-container>
+        <ng-container  matColumnDef="leave">
+          <th class="cell" mat-header-cell *matHeaderCellDef>Leave</th>
+          <td class="cell" style="margin-left: 100px;" mat-cell *matCellDef="let element"> {{element.leave}}</td>
+        </ng-container>
+        <tr  mat-header-row *matHeaderRowDef="displayedColYear"></tr>
+        <tr  mat-row *matRowDef="let row; columns:displayedColYear;"></tr>
+      </table> 
+  
+  
+   

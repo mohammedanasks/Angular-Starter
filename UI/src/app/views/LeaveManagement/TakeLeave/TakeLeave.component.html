@@ -1,0 +1,47 @@
+
+
+
+
+<div class="main">
+
+  <div *ngIf="this.message">
+
+   
+
+  </div>
+
+  <form class="form1">
+      <label class="tittle" *ngIf="this.tittle" >TakeLeave</label>
+      <label class="tittle" *ngIf="this.tittle==false" >UpdateLeave</label>
+        <mat-form-field class="form1-select" appearance="standard">
+          <mat-label  *ngIf=" namereq==false " >EmployName</mat-label>
+          <span style="color: red;" *ngIf="namereq">{{NameRequired}}</span>
+          <mat-select [(ngModel)]="this.Leave.employeeId" name="emp" >
+            <mat-option [value]="emp.id" *ngFor="let emp of this.employs" value="one">{{emp.lastName}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="form1-select" appearance="standard">
+        <mat-label *ngIf=" leavereq==false "  >Type</mat-label>
+        <span style="color: red;" *ngIf="leavereq">{{LeaveTypeRequired}}</span>
+        <mat-select [(ngModel)]="this.Leave. leaveTypeId" name="lve" >
+          <mat-option [value]="Lve.id"  *ngFor="let Lve of this.LeaveType" value="one">{{Lve.leaveTypeName}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+        <mat-form-field style="width: 500px;" appearance="fill">
+          <mat-label>Enter a date range</mat-label>
+          <mat-date-range-input  [rangePicker]="picker">
+            <input  [(ngModel)]="this.Leave.fromDate" name="FromDate" matStartDate placeholder="Start date">
+            <input [(ngModel)]="this.Leave.toDate" name="TomDate" matEndDate placeholder="End date">
+          </mat-date-range-input>
+          <mat-hint *ngIf="this.message==false">MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+          <mat-hint class="errormsg" style="color: red;" *ngIf="this.message">{{messagedata}}</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+     
+        <button *ngIf="this.tittle " (click)="TakeLeave()" style="margin-left:400px;width: 100px;"  mat-raised-button color="primary">Take</button>
+        <button *ngIf="this.tittle==false" style="margin-left:400px;width: 100px;" (click)="UpdateDeLeave()" mat-raised-button color="primary">Update</button>
+  </form>      
+
+</div>

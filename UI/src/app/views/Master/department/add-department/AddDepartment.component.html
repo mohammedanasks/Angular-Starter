@@ -1,0 +1,29 @@
+
+
+<div class="main">
+
+    <form class="form1" >
+        <label class="tittle" *ngIf="this.tittle" >AddDepartment</label>
+        <label class="tittle" *ngIf="this.tittle==false" >UpdateDepartment</label>
+          <mat-form-field class="form1-input" appearance="standard">
+            <mat-label>Name</mat-label>
+            <input [(ngModel)]="this.department.name"  name="fname" type="text" matInput />
+          </mat-form-field>
+          <mat-form-field class="form1-select" appearance="standard">
+            <mat-label>Head</mat-label>
+            <mat-select [(ngModel)]="this.department.departmentHeadId" name="emp" >
+              <mat-option [value]="emp.id" *ngFor="let emp of this.employs" value="one">{{emp.text}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field  class="form1-input"  appearance="standard">
+            <mat-label>contact</mat-label>
+            <input [(ngModel)]="this.department.contact" name="lname" type="text" matInput />
+          </mat-form-field>
+          <button *ngIf="this.tittle " (click)="AddDepartment()" style="margin-left:400px;width: 100px;"  mat-raised-button color="primary">Add</button>
+          <button *ngIf="this.tittle==false" style="margin-left:400px;width: 100px;" (click)="UpdateDepartment()" mat-raised-button color="primary">Update</button>
+    </form>      
+
+
+</div>
+
+  

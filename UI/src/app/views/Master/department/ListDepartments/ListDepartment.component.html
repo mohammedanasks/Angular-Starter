@@ -1,0 +1,39 @@
+
+    <div >
+        <button class="btn" style="background-color:#3f833f;"
+        mat-raised-button color="primary"  
+        routerLink="/Masters/Departments/AddDepartment"routerLinkActive="router-link-active">+ AddDepartment</button>
+      </div>
+      <table  class="content" mat-table [dataSource]="Departments" >  
+          <ng-container  matColumnDef="Id">
+            <th class="cell"  mat-header-cell *matHeaderCellDef> Id </th>
+            <td class="cell"   mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container>
+          <ng-container matColumnDef="Name">
+            <th class="cell"  mat-header-cell *matHeaderCellDef> Name </th>
+         <td class="cell"  mat-cell *matCellDef="let element"><a (click)="getdata(element)">{{element.name}}</a></td>
+          </ng-container>
+          <ng-container  matColumnDef="Head">
+            <th class="cell"  mat-header-cell *matHeaderCellDef> Head</th>
+            <td class="cell"  style="margin-left: 100px;" mat-cell *matCellDef="let element"> {{element.departmentHeadName}} </td>
+          </ng-container>
+          <ng-container  matColumnDef="Contact">
+            <th class="cell"  mat-header-cell *matHeaderCellDef>Contact </th>
+            <td class="cell"  style="margin-left: 100px;" mat-cell *matCellDef="let element"> {{element.contact
+            }}</td>
+          </ng-container>
+          <ng-container class="content" matColumnDef="Actions">
+            <th class="cell"  mat-header-cell *matHeaderCellDef>Actions</th>
+            <td class="cell"  mat-cell *matCellDef="let element">
+              <a (click)="  openDialog(element.id) " color="warn"><mat-icon aria-hidden="false" style="color:rgb(224, 104, 104);" aria-label="Example home icon" fontIcon="home">delete</mat-icon></a>
+              <a routerLink='/Masters/Departments/AddDepartment/{{element.id}}' routerLinkActive="router-link-active" color="warn"><mat-icon style="color: rgb(108, 108, 172);" aria-hidden="false" aria-label="Example home icon" fontIcon="home">edit</mat-icon></a>
+              
+            </td>      
+          </ng-container>
+      
+          <tr  mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr  mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table> 
+        <div class="fade" *ngIf="this.DeleteStatus">
+          <p>Deleted Successfully>
+        </div>
